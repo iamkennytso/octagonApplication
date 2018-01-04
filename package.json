@@ -1,0 +1,33 @@
+{
+  "name": "octagonapplication",
+  "version": "1.0.0",
+  "description": "Coding Challenge for Octagon Application\u001b",
+  "main": "server/main.js",
+  "scripts": {
+    "start": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/iamkennytso/octagonApplication.git"
+  },
+  "author": "Kenneth Tso | iamkennytso@gmail.com",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/iamkennytso/octagonApplication/issues"
+  },
+  "homepage": "https://github.com/iamkennytso/octagonApplication#readme",
+  "devDependencies": {
+    "babel-core": "^6.26.0",
+    "babel-loader": "^7.1.2",
+    "babel-preset-react": "^6.24.1",
+    "babel-preset-env": "^1.6.1",
+    "webpack": "^3.8.1"
+  },
+  "dependencies": {
+    "axios": "^0.17.1",
+    "compression": "^1.7.1",
+    "express": "^4.16.2",
+    "react": "^16.1.0",
+    "react-dom": "^16.1.0"
+  }
+}
