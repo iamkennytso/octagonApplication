@@ -1,19 +1,23 @@
 .section{
-  padding-top:56px;
+  padding-top:50px;
 }
-.navbar{
-  background-color: #F8F9FA;
-}
+
 #navbarDiv{
+  background-color: #F8F9FA;
   display:grid;
   width: 100%;
-  grid-template-columns: auto 1fr auto
+  grid-template-columns: auto 1fr auto;
+  position:fixed;
 }
 #navPic{
   grid-column: 1/2
 }
 #navLinks{
   grid-column: 3/4
+}
+body{
+  margin-top:0;
+  margin-bottom:0;
 }
 /* #footerDiv{
   display:grid;

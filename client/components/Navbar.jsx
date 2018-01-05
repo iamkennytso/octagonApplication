@@ -3,7 +3,7 @@ import { Link } from 'react-scroll'
 
 const navbar = (props) => {
   return (
-    <nav className="navbar navbar-default fixed-top">
+    <nav>
       <div id="navbarDiv">
         <img id="navPic" src='./imgs/bannerPic.png' alt="Doublelift" />
         <div id="navLinks">
