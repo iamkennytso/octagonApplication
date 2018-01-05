@@ -2,6 +2,8 @@ import React from 'react';
 import ReactDom from 'react-dom';
 import { Element } from 'react-scroll'
 
+import Navbar from './components/Navbar.jsx'
+
 class App extends React.Component {
   constructor(props) {
     super(props);
@@ -13,6 +15,7 @@ class App extends React.Component {
   render() {
     return (
       <div>
+        <Navbar />          
 
         <Element className="section" name='sec1'>
           <div>
