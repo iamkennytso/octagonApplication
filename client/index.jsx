@@ -3,8 +3,10 @@ import ReactDom from 'react-dom';
 import { Element } from 'react-scroll'
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 
-import Navbar from './components/Navbar.jsx'
-import Footer from './components/Footer.jsx'
+import Navbar from './components/Navbar.jsx';
+import Hero from './components/Hero.jsx';
+import Footer from './components/Footer.jsx';
+
 class App extends React.Component {
   constructor(props) {
     super(props);
@@ -18,7 +20,7 @@ class App extends React.Component {
       <div>
         <Navbar />          
         <Element className="section" name='sec1'>
-          <img src="./imgs/hero.jpg" alt="DoubleliftIsTheBest!" width="100%"/>
+          <Hero />
         </Element>
         <Element className="section" name='sec2'>
           <div>
