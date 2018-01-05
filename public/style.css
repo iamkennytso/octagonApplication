@@ -65,7 +65,18 @@
   color:#ffffff;
   background-color: #121015;
   margin: 0px 10px 0px 10px;
+  display: grid;
+  grid-template-columns: 1fr 1fr
+}
+#footerLeft{
+  margin-left:3px;
+  grid-column: 1/2;
+  display: flex;
+  justify-content: flex-start;
+}
+#footerRight{
+  margin-right:3px;
+  grid-column: 2/3;
   display: flex;
   justify-content: flex-end;
-  align-items: flex-end;
 }
