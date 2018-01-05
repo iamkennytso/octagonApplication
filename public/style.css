@@ -15,11 +15,11 @@
 #navLinks{
   grid-column: 3/4
 }
-#footerDiv{
+/* #footerDiv{
   display:grid;
   width: 100%;
   grid-template-columns: 11% 15% 5% 15% 5% 15% 4% 18% 12%;
-  grid-template-rows: 50% 50%
+  grid-template-rows: 1fr 1fr
 }
 #footerPic{
   width: 100%;
@@ -42,4 +42,30 @@
 #fbLink{
   grid-column: 8/9;
   grid-row:1/2
+}
+#footerOtherBack{
+  background-color: #121015;
+  grid-column: 1/10;
+  grid-row: 2/3;
+}
+#footerOtherMain{
+  color:#ffffff;
+  margin-right: 10px;
+  grid-column: 3/10;
+  grid-row: 2/3;
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-end;
+} */
+.alignRight{
+  display: flex;
+  justify-content: flex-end;
+}
+#footerDiv{
+  color:#ffffff;
+  background-color: #121015;
+  margin: 0px 10px 0px 10px;
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-end;
 }
