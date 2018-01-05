@@ -3,6 +3,7 @@ import ReactDom from 'react-dom';
 import { Element } from 'react-scroll'
 
 import Navbar from './components/Navbar.jsx'
+import Footer from './components/Footer.jsx'
 class App extends React.Component {
   constructor(props) {
     super(props);
@@ -17,6 +18,7 @@ class App extends React.Component {
         <Navbar />          
 
         <img className="section" src="./imgs/hero.jpg" alt="DoubleliftIsTheBest!" width="100%"/>
+
         <Element className="section" name='sec1'>
           <div>
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque eget purus diam. Sed porta sapien quis quam ultrices volutpat. Sed vel justo lacinia, varius justo vitae, mattis felis. Sed leo dui, sagittis sed urna a, vehicula blandit massa. Aenean euismod porta arcu ac ullamcorper. Integer urna massa, tristique a rhoncus at, commodo vel purus. Nam id diam dapibus, vestibulum eros et, porta mauris. Pellentesque vitae tellus iaculis nisi pellentesque hendrerit id vel turpis. Interdum et malesuada fames ac ante ipsum primis in faucibus. Aliquam lacinia sem mi, sit amet malesuada ex commodo in. Curabitur fermentum lectus quis erat convallis sollicitudin. Nulla fermentum vehicula finibus. Morbi non sagittis risus. In vulputate mi lacus, at bibendum mi posuere nec.
@@ -42,7 +44,7 @@ class App extends React.Component {
           Proin pharetra orci non eros eleifend varius. Aenean consequat quis neque sit amet sodales. Donec hendrerit diam ut ligula efficitur lacinia. Sed ultricies sem vitae quam pretium, et ornare turpis bibendum. Vestibulum iaculis tincidunt nunc ut convallis. Aenean tellus sapien, fermentum a lacus in, semper viverra est. Aenean id est vitae velit porta accumsan eget eget mauris. Sed lacinia risus sit amet vestibulum mattis. Etiam lacinia augue sit amet mollis ornare. Vivamus eu tellus consequat, eleifend justo sed, interdum felis. In porta consequat sapien non tempor. Nullam convallis finibus blandit. Nulla euismod nisl vel magna tempus, at euismod elit ultricies. Etiam hendrerit dapibus leo at convallis.
           </div>
         </Element>
-
+        <Footer />
       </div>
     )
   }
