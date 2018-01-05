@@ -1,6 +1,7 @@
 import React from 'react';
 import ReactDom from 'react-dom';
 import { Element } from 'react-scroll'
+import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 
 import Navbar from './components/Navbar.jsx'
 import Footer from './components/Footer.jsx'
@@ -46,6 +47,8 @@ class App extends React.Component {
 }
 
 ReactDom.render(
-  <App />,
+  <MuiThemeProvider>
+    <App />
+  </MuiThemeProvider>,
   document.getElementById('app')
 );
