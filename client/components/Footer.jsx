@@ -2,8 +2,9 @@ import React from 'react';
 
 const footer = (props) => {
   return (
-    <div id="footerDiv">
-      {/* <img id="footerPic" src='./imgs/footer.jpg' alt="footer"/>
+    <div id="footerContainer">
+      {/* See end of file for information about these comments
+      <img id="footerPic" src='./imgs/footer.jpg' alt="footer"/>
       <a href="https://twitter.com/TLdoublelift" id="twitterLink"/>
       <a href="https://www.youtube.com/Doublelift" id="youtubeLink"/>
       <a href="https://www.instagram.com/yiliangpeng/" id="instaLink"/>
@@ -30,5 +31,7 @@ const footer = (props) => {
     </div>
   )
 }
-
+//Originally I wanted to make the img in public/footer.jpg the footer, and make the links clickable, but it looked really bad in responsive
+//without breaking up the individual buttons. It looked tacky as well since there was no feedback that the buttons were clickable. If I wanted
+//to spend more time on this, I would have had to photoshop the buttons so on mouseover the colors would change.
 export default footer;

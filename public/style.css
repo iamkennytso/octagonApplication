@@ -1,8 +1,13 @@
+body{
+  margin-top:0;
+  margin-bottom:0;
+  font-family: 'Roboto', sans-serif;
+}
 .section{
   padding-top:50px;
 }
 
-#navbarDiv{
+#navbarContainer{
   background-color: #F8F9FA;
   display:grid;
   width: 100%;
@@ -15,12 +20,52 @@
 #navLinks{
   grid-column: 3/4
 }
-body{
-  margin-top:0;
-  margin-bottom:0;
-  font-family: 'Roboto', sans-serif;
+
+#youtubeContainer{
+  display:grid;
+  grid-template-columns: 60% 20% 20%;
+  grid-template-rows: auto auto
 }
-/* #footerDiv{
+#youtubeBG{
+  grid-column: 1/4;
+  grid-row: 1/2;
+  z-index: -1
+}
+#youtubePlayer{
+  grid-column: 1/2;
+  grid-row:1/2;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+#youtubeText{
+  grid-column: 1/4;
+  grid-row:2/3
+}
+
+#footerContainer{
+  color:#ffffff;
+  background-color: #121015;
+  margin: 0px 10px 0px 10px;
+  display: grid;
+  grid-template-columns: 1fr 1fr
+}
+#footerLeft{
+  margin-left:3px;
+  grid-column: 1/2;
+  display: flex;
+  justify-content: flex-start;
+}
+#footerRight{
+  margin-right:3px;
+  grid-column: 2/3;
+  display: flex;
+  justify-content: flex-end;
+}
+
+
+/* The below was for an alternative footer. See component/Footer.jsx
+#footerDiv{
   display:grid;
   width: 100%;
   grid-template-columns: 11% 15% 5% 15% 5% 15% 4% 18% 12%;
@@ -62,26 +107,3 @@ body{
   justify-content: flex-end;
   align-items: flex-end;
 } */
-.alignRight{
-  display: flex;
-  justify-content: flex-end;
-}
-#footerDiv{
-  color:#ffffff;
-  background-color: #121015;
-  margin: 0px 10px 0px 10px;
-  display: grid;
-  grid-template-columns: 1fr 1fr
-}
-#footerLeft{
-  margin-left:3px;
-  grid-column: 1/2;
-  display: flex;
-  justify-content: flex-start;
-}
-#footerRight{
-  margin-right:3px;
-  grid-column: 2/3;
-  display: flex;
-  justify-content: flex-end;
-}

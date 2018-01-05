@@ -5,7 +5,7 @@ import FlatButton from 'material-ui/FlatButton';
 const navbar = (props) => {
   return (
     <nav>
-      <div id="navbarDiv">
+      <div id="navbarContainer">
         <img id="navPic" src='./imgs/bannerPic.png' alt="Doublelift" />
         <div id="navLinks">
           <Link activeClass="active" to="sec1" spy={true} smooth={true} duration={500} > <FlatButton label="Top" /></Link>

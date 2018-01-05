@@ -5,6 +5,7 @@ import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 
 import Navbar from './components/Navbar.jsx';
 import Hero from './components/Hero.jsx';
+import Youtube from './components/Youtube.jsx';
 import Footer from './components/Footer.jsx';
 
 class App extends React.Component {
@@ -23,9 +24,7 @@ class App extends React.Component {
           <Hero />
         </Element>
         <Element className="section" name='sec2'>
-          <div>
-            Phasellus elementum, massa ac tristique aliquam, ex tellus commodo neque, sit amet rutrum tellus risus vitae arcu. Aliquam erat volutpat. Aenean sed justo vitae augue vulputate consectetur. Aenean condimentum blandit quam sit amet auctor. Aenean euismod, lacus et commodo viverra, massa felis ullamcorper justo, id consectetur libero risus id nibh. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Morbi varius mi ac urna consequat rhoncus. Pellentesque condimentum mauris et ante vestibulum, ac scelerisque lectus tempor. Sed vehicula aliquam metus.
-          </div>
+          <Youtube />
         </Element>
         <Element className="section" name='sec3'>
           <div>
