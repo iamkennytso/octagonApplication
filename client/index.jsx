@@ -3,6 +3,7 @@ import ReactDom from 'react-dom';
 import { Element } from 'react-scroll'
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 
+import ContactDialog from './components/ContactDialog.jsx';
 import Navbar from './components/Navbar.jsx';
 import Hero from './components/Hero.jsx';
 import Youtube from './components/Youtube.jsx';
@@ -12,13 +13,26 @@ class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      test: 'Hello World',
+      showContactDialog: false,
     }
+    this.handleShowContactDialog = this.handleShowContactDialog.bind(this);
+    this.handleCloseContactDialog = this.handleCloseContactDialog.bind(this);
   }
-
+  handleShowContactDialog(e){
+    e.preventDefault();
+    this.setState({
+      showContactDialog:true
+    })
+  }
+  handleCloseContactDialog(e){
+    this.setState({
+      showContactDialog:false
+    })
+  }
   render() {
     return (
       <div>
+        <ContactDialog open={this.state.showContactDialog} close={this.handleCloseContactDialog} />
         <Navbar />          
         <Element className="section" name='sec1'>
           <Hero />
@@ -41,7 +55,7 @@ class App extends React.Component {
           Proin pharetra orci non eros eleifend varius. Aenean consequat quis neque sit amet sodales. Donec hendrerit diam ut ligula efficitur lacinia. Sed ultricies sem vitae quam pretium, et ornare turpis bibendum. Vestibulum iaculis tincidunt nunc ut convallis. Aenean tellus sapien, fermentum a lacus in, semper viverra est. Aenean id est vitae velit porta accumsan eget eget mauris. Sed lacinia risus sit amet vestibulum mattis. Etiam lacinia augue sit amet mollis ornare. Vivamus eu tellus consequat, eleifend justo sed, interdum felis. In porta consequat sapien non tempor. Nullam convallis finibus blandit. Nulla euismod nisl vel magna tempus, at euismod elit ultricies. Etiam hendrerit dapibus leo at convallis.
           </div>
         </Element>
-        <Footer />
+        <Footer show={this.handleShowContactDialog} />
       </div>
     )
   }

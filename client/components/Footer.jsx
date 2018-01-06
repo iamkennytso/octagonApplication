@@ -13,19 +13,21 @@ const footer = (props) => {
       <div id="footerLeft">
         <p>
           <br/>
-          <a href="#" >Contact Us</a> | 
-          <a href="#" > Legal Notice</a> | 
-          <a href="#" > Terms of Use</a> 
+          <a href="#" onClick={props.show}>Contact Us</a>&nbsp;|&nbsp;
+          <a href="#" >Legal Notice</a>&nbsp;|&nbsp;
+          <a href="#" >Terms of Use</a> 
           <br/> 
           All media belongs to their respective owners.<br/> This site is made for educational purposes. <br/> All rights reserved.&nbsp;&nbsp;
         </p>
       </div>
       <div id="footerRight">
         <p>
+          <img src="./imgs/facebook.png" /> | <a href="https://www.facebook.com/DoubleliftOfficial/">DoubleliftOfficial</a> <br/>
           <img src="./imgs/twitter.png" /> | <a href="https://twitter.com/TLdoublelift">TLDoublelift</a> <br/>
+          <img src="./imgs/twitch.png" /> | <a href="https://www.twitch.tv/doublelift">Doublelift</a> <br/>
           <img src="./imgs/youtube.png" /> | <a href="https://www.youtube.com/Doublelift">Doublelift</a> <br/>
           <img src="./imgs/insta.png" /> | <a href="https://www.instagram.com/yiliangpeng/">YiLiangPeng</a> <br/>
-          <img src="./imgs/facebook.png" /> | <a href="https://www.facebook.com/DoubleliftOfficial/">DoubleliftOfficial</a> <br/>
+
         </p>
       </div>
     </div>
