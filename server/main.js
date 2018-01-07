@@ -14,7 +14,7 @@ app.listen(port, function() {
 	console.log(`<('.'<) Server's up on port 1203!`);
 })
 
-app.get('/getYoutube', (req, out) => {
+app.get('/getYoutube', (req, res) => {
   axios.get('https://www.googleapis.com/youtube/v3/search', {
     params: {
       key: process.env.YOUTUBE_KEY,
@@ -24,15 +24,24 @@ app.get('/getYoutube', (req, out) => {
       maxResults:4
     }
   })
-    .then(res=> {
+    .then(yt=> {
       const arr = []
-      for (let i = 0; i < res.data.items.length; i++){
+      for (let i = 0; i < yt.data.items.length; i++){
         let obj = {}
-        obj.URL = res.data.items[i].id.videoId
-        obj.title = res.data.items[i].snippet.title
-        obj.thumb = res.data.items[i].snippet.thumbnails.medium.url
+        obj.URL = yt.data.items[i].id.videoId
+        obj.title = yt.data.items[i].snippet.title
+        obj.thumb = yt.data.items[i].snippet.thumbnails.medium.url
         arr.push(obj)
       }
-      out.send(arr)
+      res.send(arr)
     })
+})
+
+app.post('/contactForm', (req, res) => {
+  //not sure what database this is supposed to be formatted for, just sending it to the backend for now
+  console.log(req.body.firstName)
+  console.log(req.body.lastName)
+  console.log(req.body.email)
+  console.log(req.body.zip)
+  console.log(req.body.state)
 })
