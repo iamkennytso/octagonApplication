@@ -8,6 +8,7 @@ import MenuItem from 'material-ui/MenuItem';
 import FlatButton from 'material-ui/FlatButton';
 
 import USstates from './../../server/states.js'
+import Snackbar from './dialogErrorSnackbar.jsx'
 
 class dialog extends React.Component {
   constructor(props) {
@@ -23,7 +24,6 @@ class dialog extends React.Component {
       zipV: false,
       chosenState: '',
       dropDownVal: 0,
-      errorCount: 0,
       snackbar: false
     }
     this.handleFirstName = this.handleFirstName.bind(this)
@@ -32,24 +32,25 @@ class dialog extends React.Component {
     this.handleZip = this.handleZip.bind(this)
     this.handleState = this.handleState.bind(this)
     this.handleSubmit = this.handleSubmit.bind(this)
+    this.handleSnackbarClose = this.handleSnackbarClose.bind(this)
   }
   handleFirstName(e,v){
     this.setState({firstName:v})
     if (/^[a-zA-Z]+$/.test(v)) {
-      this.setState({firstNameV:true})
-    } else this.setState({firstNameV:false})
+      this.setState({firstNameV:false})
+    } else this.setState({firstNameV:true})
   }
   handleLastName(e,v){
     this.setState({lastName:v})
     if (/^[a-zA-Z"'"-]+$/.test(v)) {
-      this.setState({lastNameV:true})
-    } else this.setState({lastNameV:false})
+      this.setState({lastNameV:false})
+    } else this.setState({lastNameV:true})
   }
   handleEmail(e,v){
     this.setState({email:v})
     if (/^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/.test(v)) {
-      this.setState({emailV:true})
-    } else this.setState({emailV:false})
+      this.setState({emailV:false})
+    } else this.setState({emailV:true})
   }
   handleState(e,i){
     this.setState({
@@ -60,11 +61,11 @@ class dialog extends React.Component {
   handleZip(e,v){
     this.setState({zip:v})
     if (/^\d{5}$/.test(v)) {
-      this.setState({zipV:true})
-    } else this.setState({zipV:false})
+      this.setState({zipV:false})
+    } else this.setState({zipV:true})
   }
   handleSubmit(){
-    if(this.state.firstNameV && this.state.lastNameV && this.state.emailV && this.state.zipV && this.state.dropDownVal !== 0){
+    if(!this.state.firstNameV && !this.state.lastNameV && !this.state.emailV && !this.state.zipV && this.state.dropDownVal !== 0){
       axios.post('contactForm', {
         firstName: this.state.firstName,
         lastName: this.state.lastName,
@@ -72,11 +73,11 @@ class dialog extends React.Component {
         zip: this.state.zip,
         state: this.state.chosenState
       })
-    } else {
-      this.setState({
-        errorCount: this.state.firstNameV + this.state.lastNameV + this.state.emailV + this.state.zipV + (this.state.dropDownVal === 0 ? 1 : 0)
-      }, console.log(this.state.errorCount))
-    }
+    } else { 
+      this.setState({ snackbar: true }) }  
+  }
+  handleSnackbarClose(){
+    this.setState ({ snackbar: false })
   }
   render(){
     return (
@@ -93,7 +94,7 @@ class dialog extends React.Component {
         />}
       >
         <div id="dialogContainer">
-          
+          <Snackbar open={this.state.snackbar} close={this.handleSnackbarClose} />
           <div id="dialogText"> 
             We're super excited you're as big of a fanboy of Doublelift as Kenny is. He's been an avid follower of LoL esports since season 3,
             but more importantly, he's currently actively seeking employment! Why don't you enter your information below, and if you're able 
@@ -125,9 +126,8 @@ class dialog extends React.Component {
           </div>
           <div id="dialogZip">
             <TextField
-              hintText="Zip Code"
+              hintText="Zip Code" onChange={this.handleZip}
               errorText={!this.state.zipV ? "" : "Please enter a 5 digit zip code."}
-              onChange={this.handleZip}
             /><br />
           </div>
         </div>
