@@ -4,7 +4,7 @@
   "description": "Coding Challenge for Octagon Application\u001b",
   "main": "server/main.js",
   "scripts": {
-    "start": "node server/main.js && webpack"
+    "start": "webpack && node server/main.js "
   },
   "repository": {
     "type": "git",
