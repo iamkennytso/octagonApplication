@@ -1,7 +1,7 @@
 {
   "name": "octagonapplication",
   "version": "1.0.0",
-  "description": "Coding Challenge for Octagon Application\u001b",
+  "description": "Coding Challenge for Octagon Application",
   "main": "server/main.js",
   "scripts": {
     "start": "webpack && node server/main.js "
@@ -31,6 +31,7 @@
     "material-ui": "^0.20.0",
     "react": "^16.1.0",
     "react-dom": "^16.1.0",
-    "react-scroll": "^1.7.5"
+    "react-scroll": "^1.7.5",
+    "webpack": "^3.8.1"
   }
 }
