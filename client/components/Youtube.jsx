@@ -35,7 +35,7 @@ class youtubeSec extends React.Component {
         {/* the playable youtube video */}
         <div id="youtubePlayer">
           <iframe  type="text/html" width="95%" height="95%" allowFullScreen ="allowfullscreen"
-            src={`http://www.youtube.com/embed/${this.state.currentVideo}`}
+            src={`https://www.youtube.com/embed/${this.state.currentVideo}`}
             frameBorder="0">
           </iframe>
         </div>
