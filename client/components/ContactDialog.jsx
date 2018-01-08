@@ -98,7 +98,6 @@ class dialog extends React.Component {
           onClick={this.handleSubmit}
         />}
       >
-        <button type="button" onClick={this.props.openSnackbar} />
         <div id="dialogContainer">
           <Snackbar open={this.state.snackbar} close={this.handleSnackbarClose} />
           <div id="dialogText"> 

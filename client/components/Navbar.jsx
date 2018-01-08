@@ -12,7 +12,7 @@ const navbar = (props) => {
           <Link activeClass="active" to="sec2" spy={true} smooth={true} duration={500} > <FlatButton label="Youtube" /></Link>
           <Link activeClass="active" to="sec3" spy={true} smooth={true} duration={500} > <FlatButton label="Sec 3" /></Link>
           <Link activeClass="active" to="sec4" spy={true} smooth={true} duration={500} > <FlatButton label="Sec 4" /></Link>
-          <Link activeClass="active" to="sec5" spy={true} smooth={true} duration={500} > <FlatButton label="Sec 5" /></Link>
+          <Link activeClass="active" to="sec5" spy={true} smooth={true} duration={500} > <FlatButton label="Join Us!" /></Link>
         </div>
       </div>
     </nav>
