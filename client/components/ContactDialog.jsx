@@ -65,7 +65,8 @@ class dialog extends React.Component {
     } else this.setState({zipV:true})
   }
   handleSubmit(){
-    if(!this.state.firstNameV && !this.state.lastNameV && !this.state.emailV && !this.state.zipV && this.state.dropDownVal !== 0){
+    if(!this.state.firstNameV && !this.state.lastNameV && !this.state.emailV && !this.state.zipV && this.state.dropDownVal !== 0
+    && this.state.firstName !== '' && this.state.lastName !== ''&& this.state.email !== '' && this.state.zip !== ''){
       axios.post('contactForm', {
         firstName: this.state.firstName,
         lastName: this.state.lastName,
@@ -73,6 +74,10 @@ class dialog extends React.Component {
         zip: this.state.zip,
         state: this.state.chosenState
       })
+        .then((res) => {
+          console.log(res.data)
+          this.props.openSnackbar()
+        })
     } else { 
       this.setState({ snackbar: true }) }  
   }
@@ -93,6 +98,7 @@ class dialog extends React.Component {
           onClick={this.handleSubmit}
         />}
       >
+        <button type="button" onClick={this.props.openSnackbar} />
         <div id="dialogContainer">
           <Snackbar open={this.state.snackbar} close={this.handleSnackbarClose} />
           <div id="dialogText"> 

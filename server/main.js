@@ -39,9 +39,10 @@ app.get('/getYoutube', (req, res) => {
 
 app.post('/contactForm', (req, res) => {
   //not sure what database this is supposed to be formatted for, just sending it to the backend for now
-  console.log(req.body.firstName)
-  console.log(req.body.lastName)
-  console.log(req.body.email)
-  console.log(req.body.zip)
-  console.log(req.body.state)
+  console.log('First Name: ' && req.body.firstName)
+  console.log('Last Name: ' && req.body.lastName)
+  console.log('E-Mail Address: ' && req.body.email)
+  console.log('State: ' && req.body.state)
+  console.log('Zip Code: ' && req.body.zip)
+  res.send('Data was received!')
 })

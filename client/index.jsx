@@ -8,15 +8,19 @@ import Navbar from './components/Navbar.jsx';
 import Hero from './components/Hero.jsx';
 import Youtube from './components/Youtube.jsx';
 import Footer from './components/Footer.jsx';
+import Snackbar from './components/contactSubmitSnackbar.jsx';
 
 class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
       showContactDialog: false,
+      showSubmitSnackbar: false,
     }
     this.handleShowContactDialog = this.handleShowContactDialog.bind(this);
     this.handleCloseContactDialog = this.handleCloseContactDialog.bind(this);
+    this.handleOpenSubmitSnackbar = this.handleOpenSubmitSnackbar.bind(this);
+    this.handleCloseSubmitSnackbar = this.handleCloseSubmitSnackbar.bind(this);
   }
   handleShowContactDialog(e){
     e.preventDefault();
@@ -24,15 +28,27 @@ class App extends React.Component {
       showContactDialog:true
     })
   }
-  handleCloseContactDialog(e){
+  handleCloseContactDialog(){
     this.setState({
       showContactDialog:false
+    })
+  }
+  handleOpenSubmitSnackbar(){
+    this.setState({
+      showContactDialog: false,
+      showSubmitSnackbar:true
+    })
+  }
+  handleCloseSubmitSnackbar(){
+    this.setState({
+      showSubmitSnackbar:false
     })
   }
   render() {
     return (
       <div>
-        <ContactDialog open={this.state.showContactDialog} close={this.handleCloseContactDialog} />
+        <ContactDialog open={this.state.showContactDialog} close={this.handleCloseContactDialog} openSnackbar={this.handleOpenSubmitSnackbar} />
+        <Snackbar open={this.state.showSubmitSnackbar} close={this.handleCloseSubmitSnackbar} />
         <Navbar />          
         <Element className="section" name='sec1'>
           <Hero />
